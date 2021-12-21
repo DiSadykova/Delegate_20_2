@@ -9,15 +9,15 @@ namespace Delegate_20_2
     class Program
     {
         delegate double MyDelegate(double r);
-
-
         static void Main(string[] args)
         {
             MyDelegate myDelegate = Cirqumference;
             myDelegate(3);
-            Console.ReadKey();
-
-
+            myDelegate = CircleArea;
+            myDelegate(5);
+            myDelegate = VolumSphere;
+            myDelegate(7);
+            Console.WriteLine();
         }
         static double Cirqumference(double r)
         {
@@ -28,11 +28,15 @@ namespace Delegate_20_2
         static double CircleArea(double r)
         {
             double s = Math.PI * Math.Pow(r, 2);
+            Console.WriteLine(s);
             return s;
         }
         static double VolumSphere(double r)
         {
-            double v = 4 / 3 * Math.PI * Math.Pow(r, 3);
+            double a = 4;
+            double b = 3;
+            double v = (a/b)* Math.PI * Math.Pow(r, 3);
+            Console.WriteLine(v);
             return v;
         }
     }
